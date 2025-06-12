@@ -1,0 +1,14 @@
+.titulo {
+    font-size: 24px;
+}
+  
+.cerrar {
+    margin-top: 20px;
+    background-color: #007bff;
+    color: #fff;
+}
+  
+.cerrar:hover {
+    background-color: #0056b3;
+}
+  
