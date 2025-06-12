@@ -1,0 +1,39 @@
+<div class="pagina-completa">
+    <mat-toolbar class="custom-toolbar">
+        <img src="../../../../assets/logo.png" class="toolbar-logo">
+        <span class="toolbar-spacer2"></span>
+        <span class="toolbar-title">EduJob+</span>
+        <span class="toolbar-spacer"></span>
+        <button mat-button routerLink="/menuE/{{enombre}}">
+            <mat-icon>home</mat-icon>
+            Ir a Menu
+        </button>
+        <button mat-button (click)="logout()">
+          <mat-icon>exit_to_app</mat-icon>
+                Cerrar Sesión
+        </button>
+    </mat-toolbar>
+</div>
+
+<mat-card class="perfil-card">
+    <mat-card-header>
+      <mat-card-title>Tu Perfil</mat-card-title>
+    </mat-card-header>
+    <mat-card-content>
+      <div class="perfil-info">
+        <mat-form-field class="perfil-field">
+          <label>Nombre de Empresa</label>
+          <input matInput placeholder="Nombre" [(ngModel)]="enombre" name="nombre" disabled>
+        </mat-form-field>
+        <mat-form-field class="perfil-field">
+          <label>Correo de Empresa</label>
+          <input matInput placeholder="Correo" [(ngModel)]="correo" name="correo" disabled>
+        </mat-form-field>
+        <mat-form-field class="perfil-field">
+          <label>Teléfono de Empresa</label>
+          <input matInput placeholder="Teléfono" [(ngModel)]="telefono" name="telefono" disabled>
+        </mat-form-field>
+      </div>
+    </mat-card-content>
+</mat-card>
+  

@@ -1,0 +1,65 @@
+<div class="pagina-completa">
+    <div class="pagina-completa">
+        <mat-toolbar class="custom-toolbar">
+            <button mat-button [matMenuTriggerFor]="menu">Menu</button>
+            <span class="toolbar-spacer"></span>
+            <span class="toolbar-title">EduJob+</span>
+            <span class="toolbar-spacer"></span>
+            <button mat-button routerLink="/menuP/{{correo}}">
+                <mat-icon>home</mat-icon>
+                Ir a Menu
+            </button>
+            <button mat-button (click)="logout()">
+                <mat-icon>exit_to_app</mat-icon>
+                    Cerrar Sesión
+            </button>
+        </mat-toolbar>
+    </div>
+    
+    <mat-menu #menu="matMenu">
+        <button mat-menu-item routerLink="/listPA/{{correo}}">Propuestas Aplicadas</button>
+        <button mat-menu-item routerLink="/listMC/{{correo}}">Mis Cursos</button>
+    </mat-menu>
+
+<div class="toggle-container">
+    <mat-button-toggle-group #group="matButtonToggleGroup" [(ngModel)]="selectedOption" class="toggle-group">
+      <mat-button-toggle value="D">Describirme</mat-button-toggle>
+      <mat-button-toggle value="F">Responder Formulario</mat-button-toggle>
+    </mat-button-toggle-group>
+</div>
+
+<div class="body2" *ngIf="(selectedOption == 'D') && (aplico)">
+    <div class="container">
+        <h1>Describete</h1>
+        <input type="text" placeholder="Escribe aquí..." [(ngModel)]="desc"><br><br><br>
+        <button class="submit-button" (click)="guardar()">Guardar</button>
+    </div>
+</div>
+
+<div class="body2" *ngIf="(selectedOption == 'D') && !(aplico)">
+    <div class="container">
+        <h1>Ya aplicaste, Responde el Formulario tambien</h1>
+    </div>
+</div>
+
+<div class="body3" *ngIf="(selectedOption == 'F') && (id < log) && (respondio)">
+    <div class="containe2">
+        <h2>Numero de pregunta {{preguntas[id].idF}}</h2>
+        <h2>Pregunta: {{preguntas[id].pregunta}}</h2>
+        <label for="respuesta">Respuesta:</label>
+        <input type="text" id="respuesta" placeholder="Escribe tu respuesta..." class="input1" [(ngModel)]="respuesta">
+        <button class="submit-button" (click)="guardarP(preguntas[id].idF, preguntas[id].pregunta)">Guardar Respuesta</button>
+      </div>
+</div>
+
+<div class="body2" *ngIf="((selectedOption == 'F') && (id == log)) || ((selectedOption == 'F') && !(respondio))">
+    <div class="container">
+        <h1>Ya Contestaste</h1>
+    </div>
+</div>
+
+
+
+<div class="footer">
+    <button class="submit-button" routerLink="/moreInfoPro/{{correo}}/{{enombre}}/{{titulo}}">Regresar</button>
+</div>

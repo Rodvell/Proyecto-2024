@@ -1,0 +1,47 @@
+<div class="pagina-completa">
+  <mat-toolbar class="custom-toolbar">
+      <button mat-button [matMenuTriggerFor]="menu">Menu</button>
+      <span class="toolbar-spacer2"></span>
+      <span class="toolbar-title">EduJob+</span>
+      <span class="toolbar-spacer"></span>
+      <button mat-button routerLink="/miperfilP/{{correo}}">
+          <mat-icon>account_circle</mat-icon>
+          Mi Perfil
+      </button>
+      <button mat-button (click)="logout()">
+          <mat-icon>exit_to_app</mat-icon>
+          Cerrar Sesión
+      </button>
+  </mat-toolbar>
+</div>
+
+<mat-menu #menu="matMenu">
+  <button mat-menu-item routerLink="/listPA/{{correo}}">Propuestas Aplicadas</button>
+  <button mat-menu-item routerLink="/listMC/{{correo}}">Mis Cursos</button>
+</mat-menu>
+
+<mat-card class="perfil-card">
+    <mat-card-header>
+      <mat-card-title>Tu Perfil</mat-card-title>
+    </mat-card-header>
+    <mat-card-content>
+      <div class="perfil-info">
+        <mat-form-field class="perfil-field">
+          <label>Nombre</label>
+          <input matInput placeholder="Nombre" [(ngModel)]="nombre" name="nombre" disabled>
+        </mat-form-field>
+        <mat-form-field class="perfil-field">
+            <label>Apellido</label>
+            <input matInput placeholder="Apellido" [(ngModel)]="apellido" name="apellido" disabled>
+          </mat-form-field>
+        <mat-form-field class="perfil-field">
+          <label>Correo</label>
+          <input matInput placeholder="Correo" [(ngModel)]="correo" name="correo" disabled>
+        </mat-form-field>
+        <mat-form-field class="perfil-field">
+          <label>DPI</label>
+          <input matInput placeholder="DPI" [(ngModel)]="dpi" name="dpi" disabled>
+        </mat-form-field>
+      </div>
+    </mat-card-content>
+</mat-card>

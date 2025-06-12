@@ -1,0 +1,47 @@
+.perfil-card {
+    max-width: 400px;
+    margin: 0 auto;
+    margin-top: 30px;
+    text-align: center;
+  }
+  
+  .perfil-field {
+    width: 100%;
+    margin-bottom: 10px;
+  }
+
+  .toolbar-spacer2 {
+    flex: 1.5; /* Crea un espacio flexible entre el título y los botones */
+  }
+  
+  .perfil-info {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .toolbar-logo {
+    width: 50px; /* Ajusta el tamaño de la imagen según tus necesidades */
+    height: auto; /* Ajusta la altura de la imagen según tus necesidades */
+}
+  
+.toolbar-title {
+    flex: 1; /* Hace que el título ocupe el espacio restante en el centro */
+    text-align: center; /* Centra el título horizontalmente */
+    font-size: 40px;
+    font-family: 'Times New Roman';
+}
+  
+.toolbar-spacer {
+  flex: 1; /* Crea un espacio flexible entre el título y los botones */
+}
+
+.custom-toolbar {
+    background-color: #34495E; /* Cambia este valor al color que desees */
+    color: #FFFFFF; /* Cambia este valor al color de texto deseado */
+    box-shadow: 3px 3px 5px 0px rgba(0,0,0,0.75);
+}
+
+.button-toolbar {
+    margin: 5px;
+}

@@ -1,0 +1,87 @@
+.toolbar-logo {
+    width: 50px; /* Ajusta el tamaño de la imagen según tus necesidades */
+    height: auto; /* Ajusta la altura de la imagen según tus necesidades */
+}
+  
+.toolbar-title {
+    flex: 1; /* Hace que el título ocupe el espacio restante en el centro */
+    text-align: center; /* Centra el título horizontalmente */
+    font-size: 40px;
+    font-family: 'Times New Roman';
+}
+  
+.toolbar-spacer {
+  flex: 1; /* Crea un espacio flexible entre el título y los botones */
+}
+
+.custom-toolbar {
+    background-color: #34495E; /* Cambia este valor al color que desees */
+    color: #FFFFFF; /* Cambia este valor al color de texto deseado */
+    box-shadow: 3px 3px 5px 0px rgba(0,0,0,0.75);
+}
+
+.button-toolbar {
+    margin: 5px;
+}
+
+.toolbar-spacer2 {
+  flex: 1.5; /* Crea un espacio flexible entre el título y los botones */
+}
+
+
+.container {
+    display: flex;
+    align-items: flex-start;
+    width: 80%;
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+  }
+
+  .left {
+    flex: 2;
+    padding-right: 20px;
+  }
+
+  .right {
+    flex: 1;
+    display: flex;
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .button {
+    background-color: #0d4e94;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+
+  .footer {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 98.5%;
+    background-color: #34495E; /* Color de fondo del div */
+    padding: 10px; /* Espaciado interno para el contenido del div */
+    display: flex;
+    justify-content: space-between;
+}
+
+.footer button {
+    padding: 5px 10px;
+}
+
+.submit-button {
+    background-color: #0d4e94;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+}

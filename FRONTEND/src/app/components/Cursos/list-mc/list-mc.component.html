@@ -1,0 +1,44 @@
+<div class="pagina-completa">
+    <mat-toolbar class="custom-toolbar">
+        <button mat-button [matMenuTriggerFor]="menu">Menu</button>
+        <span class="toolbar-spacer"></span>
+        <span class="toolbar-title">EduJob+</span>
+        <span class="toolbar-spacer"></span>
+        <button mat-button routerLink="/menuP/{{correo}}">
+            <mat-icon>home</mat-icon>
+            Ir a Menu
+        </button>
+        <button mat-button (click)="logout()">
+            <mat-icon>exit_to_app</mat-icon>
+            Cerrar Sesión
+        </button>
+    </mat-toolbar>
+</div>
+
+<mat-menu #menu="matMenu">
+    <button mat-menu-item routerLink="/listPA/{{correo}}">Propuestas Aplicadas</button>
+    <button mat-menu-item routerLink="/listMC/{{correo}}">Mis Cursos</button>
+</mat-menu>
+
+<div class="body2">
+        <h1>Mis Cursos</h1>
+</div>
+
+<div class="body">
+    <table>
+        <tr>
+          <th>Nombre</th>
+          <th>Estado</th>
+          <th>Mis Clases</th>
+        </tr>
+        <tr *ngFor="let op of resultados">
+            <td>{{op.Cnombre}}</td>
+            <td>{{op.estado}}</td>
+            <td><button routerLink="/clases/{{correo}}/{{op.Cnombre}}" class="submit-button">Clases</button></td>
+        </tr>
+    </table>
+</div>
+
+<div class="footer">
+    <button class="submit-button" routerLink="/menuP/{{correo}}">Regresar</button>
+</div>

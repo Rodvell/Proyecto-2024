@@ -1,0 +1,83 @@
+.toolbar-logo {
+    width: 50px; /* Ajusta el tamaño de la imagen según tus necesidades */
+    height: auto; /* Ajusta la altura de la imagen según tus necesidades */
+}
+  
+.toolbar-title {
+    flex: 1; /* Hace que el título ocupe el espacio restante en el centro */
+    text-align: center; /* Centra el título horizontalmente */
+    font-size: 40px;
+    font-family: 'Times New Roman';
+}
+  
+.toolbar-spacer {
+  flex: 1; /* Crea un espacio flexible entre el título y los botones */
+}
+
+.custom-toolbar {
+    background-color: #34495E; /* Cambia este valor al color que desees */
+    color: #FFFFFF; /* Cambia este valor al color de texto deseado */
+    box-shadow: 3px 3px 5px 0px rgba(0,0,0,0.75);
+}
+
+.toolbar-spacer2 {
+    flex: 1.5; /* Crea un espacio flexible entre el título y los botones */
+}
+
+.button-toolbar {
+    margin: 5px;
+}
+
+/* Estilos para la tabla */
+table {
+    border-collapse: collapse;
+    width: 80%; /* Centrar la tabla en la página */
+    margin: 0 auto;
+    text-align: center;
+    table-layout: auto;
+}
+
+thead {
+    background-color: #0d4e94; /* Fondo azul para los títulos */
+    color: #fff; /* Texto blanco para los títulos */
+}
+
+th, td {
+    border: 1px solid #000; /* Borde de celda */
+    padding: 10px; /* Espaciado interno */
+}
+
+.submit-button {
+    background-color: #0d4e94;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+h2 {
+    text-align: center; /* Centra el texto */
+    color: #007bff; /* Color azul para resaltar el texto */
+}
+
+/* Estilos para filas impares (color amarillo) */
+tr:nth-child(odd) {
+    background-color: #f8cc2e;
+}
+
+/* Estilos para filas pares (color blanco) */
+tr:nth-child(even) {
+    background-color: white;
+}
+
+.footer {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 98.5%;
+    background-color: #34495E; /* Color de fondo del div */
+    padding: 10px; /* Espaciado interno para el contenido del div */
+    display: flex;
+    justify-content: space-between;
+}

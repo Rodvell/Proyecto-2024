@@ -1,0 +1,39 @@
+<div class="pagina-completa">
+    <mat-toolbar class="custom-toolbar">
+        <img src="../../../../assets/logo.png" class="toolbar-logo">
+        <span class="toolbar-spacer2"></span>
+        <span class="toolbar-title">EduJob+</span>
+        <span class="toolbar-spacer"></span>
+        <button mat-button routerLink="/menuE/{{enombre}}">
+            <mat-icon>home</mat-icon>
+            Ir a Menu
+        </button>
+        <button mat-button (click)="logout()">
+            <mat-icon>exit_to_app</mat-icon>
+                Cerrar Sesión
+        </button>
+    </mat-toolbar>
+</div> <br><br><br><br>
+
+<table>
+    <thead>
+        <td>Titulo</td>
+        <td>Descripción</td>
+        <td>Requisitos</td>
+        <td>Aplicantes</td>
+        <td>Eliminar Propuesta</td>
+    </thead>
+    <tr *ngFor="let op of resultados">
+        <td>{{op.Titulo}}</td>
+        <td>{{op.descripcion}}</td>
+        <td>{{op.requisitos}}</td>
+        <td><button class="submit-button" routerLink="/listApli/{{enombre}}/{{op.Titulo}}">Ver Aplicantes</button></td>
+        <td><button class="submit-button" (click)="eliminarPro(op.Titulo)">Eliminar Propuesta</button></td>
+    </tr>
+</table>
+
+<div class="footer">
+    <button class="submit-button" routerLink="/menuE/{{enombre}}">Regresar</button>
+</div>
+
+  

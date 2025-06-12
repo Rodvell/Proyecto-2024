@@ -1,0 +1,48 @@
+<div class="pagina-completa">
+    <mat-toolbar class="custom-toolbar">
+        <img src="../../../../assets/logo.png" class="toolbar-logo">
+        <span class="toolbar-spacer2"></span>
+        <span class="toolbar-title">EduJob+</span>
+        <span class="toolbar-spacer"></span>
+        <button mat-button routerLink="/menuE/{{enombre}}">
+            <mat-icon>home</mat-icon>
+            Ir a Menu
+        </button>
+        <button mat-button (click)="logout()">
+            <mat-icon>exit_to_app</mat-icon>
+                Cerrar Sesión
+        </button>
+    </mat-toolbar>
+</div> <br><br>
+
+<h3>Nombre de la Empresa: {{enombre}}</h3>
+<h3>Titulo de la Propuesta: {{titulo}}</h3>
+
+<div *ngIf="comp == 1">
+    <h2>No Tiene Aplicantes de Momento</h2>
+</div>
+
+<div *ngIf="comp == 2">
+    <table>
+        <thead>
+            <td>Correo Personal</td>
+            <td>Descripción</td>
+            <td>Analisis</td>
+            <td>Aceptar ?</td>
+            <td>Denegar ?</td>
+            <td>Informacion</td>
+        </thead>
+        <tr *ngFor="let op of resultados">
+            <td>{{op.Pcorreo}}</td>
+            <td>{{op.Adescripcion}}</td>
+            <td>{{op.analisis}}</td>
+            <td *ngIf="op.Aestado != 'Aprobado'"><button class="submit-button" (click)="aprobar(op.Pcorreo)">Aprobar</button></td>
+            <td *ngIf="op.Aestado == 'Aprobado'"><button class="submit-button">X</button></td>
+            <td *ngIf="op.Aestado != 'Rechazado'"><button class="submit-button" (click)="rechazado(op.Pcorreo)">Rechazar</button></td>
+            <td *ngIf="op.Aestado == 'Rechazado'"><button class="submit-button">X</button></td>
+            <td><button routerLink="/infoA/{{enombre}}/{{titulo}}/{{op.Pcorreo}}" class="submit-button">Ver Información</button></td>
+        </tr>
+    </table>
+</div>
+<br><br>
+<button class="submit-button" routerLink="/listPro/{{enombre}}">Regreasr a Propuestas</button>

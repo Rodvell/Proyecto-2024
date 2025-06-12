@@ -1,0 +1,48 @@
+<div class="pagina-completa">
+    <mat-toolbar class="custom-toolbar">
+        <img src="../../../../assets/logo.png" class="toolbar-logo">
+        <span class="toolbar-spacer2"></span>
+        <span class="toolbar-title">EduJob+</span>
+        <span class="toolbar-spacer"></span>
+        <button mat-button routerLink="/menuE/{{enombre}}">
+            <mat-icon>home</mat-icon>
+            Ir a Menu
+        </button>
+        <button mat-button (click)="logout()">
+            <mat-icon>exit_to_app</mat-icon>
+                Cerrar Sesión
+        </button>
+    </mat-toolbar>
+</div>
+
+<div class="contenedor" *ngIf="cont == 0">
+    <h2>Tiutlo de la Propuesta</h2>
+    <mat-select placeholder="Selecciona una opción" [(ngModel)]="titulo">
+      <mat-option *ngFor="let op of resultados" [value]="op.Titulo">{{op.Titulo}}</mat-option>
+    </mat-select>
+    <button mat-raised-button color="primary" (click)="sig()">Siguiente</button>
+</div>
+
+<div *ngIf="cont != 0">
+    <br><br><br>
+    <h2>Nombre de la Empresa: {{enombre}}</h2>
+    <h2>Titulo de la Propuesta: {{titulo}}</h2>
+    <table>
+        <thead>
+            <td>ID</td>
+            <td>Pregunta</td>
+            <td>Ver Respuestas</td>
+            <td>Eliminar Pregunta</td>
+        </thead>
+        <tr *ngFor="let op of resultados2">
+            <td>{{op.idF}}</td>
+            <td>{{op.pregunta}}</td>
+            <td><button class="submit-button" routerLink="/viewRes/{{enombre}}/{{titulo}}/{{op.idF}}">Ver</button></td>
+            <td><button class="submit-button" (click)="eliminar(op.idF)">Eliminar</button></td>
+        </tr>
+    </table>
+</div>
+
+<div class="footer">
+    <button class="submit-button" routerLink="/menuE/{{enombre}}">Regresar</button>
+</div>

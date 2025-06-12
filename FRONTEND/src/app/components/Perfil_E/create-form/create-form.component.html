@@ -1,0 +1,51 @@
+<div class="pagina-completa">
+    <mat-toolbar class="custom-toolbar">
+        <img src="../../../../assets/logo.png" class="toolbar-logo">
+        <span class="toolbar-spacer2"></span>
+        <span class="toolbar-title">EduJob+</span>
+        <span class="toolbar-spacer"></span>
+        <button mat-button routerLink="/menuE/{{enombre}}">
+            <mat-icon>home</mat-icon>
+            Ir a Menu
+        </button>
+        <button mat-button (click)="logout()">
+          <mat-icon>exit_to_app</mat-icon>
+                Cerrar Sesión
+        </button>
+    </mat-toolbar>
+</div>
+
+<div class="contenedor" *ngIf="(cont == 0) && (id <= 10)">
+    <h2>Tiutlo de la Propuesta</h2>
+    <mat-select placeholder="Selecciona una opción" [(ngModel)]="titulo">
+      <mat-option *ngFor="let op of resultados" [value]="op.Titulo">{{op.Titulo}}</mat-option>
+    </mat-select>
+    <button mat-raised-button color="primary" (click)="sig()">Siguiente</button>
+</div>
+
+<div class="contenedor-formulario" *ngIf="(cont != 0) && (id <= 10)" >
+    <div class="formulario">
+        <h2>Crear Propuesta</h2>
+        <mat-form-field>
+            <input matInput placeholder="Nombre" [(ngModel)]="enombre" disabled>
+          </mat-form-field>
+      
+          <mat-form-field>
+            <input matInput placeholder="Título" type="text" [(ngModel)]="titulo" disabled>
+          </mat-form-field>
+      
+          <mat-form-field>
+            <input matInput placeholder="Id" rows="4" type="text" [(ngModel)]="id" disabled>
+          </mat-form-field>
+
+          <mat-form-field>
+            <textarea matInput placeholder="Pregunta" rows="4" type="text" [(ngModel)]="pregunta"></textarea>
+          </mat-form-field><br>
+          <button mat-raised-button color="primary" (click)="otra()">Agregar Otra</button>
+          <button mat-raised-button color="primary" (click)="guardar()">Enviar</button>
+    </div>
+  </div>
+
+  <div class="contenedor" *ngIf="(id > 10)">
+    <h2>Ya has creado el numero de preguntas maxima(10)</h2>
+</div>

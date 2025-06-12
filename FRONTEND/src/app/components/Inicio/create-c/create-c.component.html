@@ -1,0 +1,75 @@
+<div class="pagina-completa">
+  <mat-toolbar class="custom-toolbar">
+      <img src="../../../../assets/logo.png" class="toolbar-logo">
+      <span class="toolbar-spacer2"></span>
+      <span class="toolbar-title">EduJob+</span>
+      <span class="toolbar-spacer"></span>
+      <button mat-raised-button class="button-toolbar" routerLink="/login">Ingresar</button>
+      <button mat-raised-button class="button-toolbar" routerLink="/menu">Regresar al Menu</button>
+  </mat-toolbar>
+
+
+<div class="toggle-container">
+    <mat-button-toggle-group #group="matButtonToggleGroup" [(ngModel)]="selectedOption" class="toggle-group">
+      <mat-button-toggle value="E">Crear Usuario de Empresa</mat-button-toggle>
+      <mat-button-toggle value="D">Crear Usuario Personal</mat-button-toggle>
+    </mat-button-toggle-group>
+</div>
+
+<div class="form-container" *ngIf="selectedOption == 'E'">
+    <mat-card>
+      <mat-card-header>
+        <mat-card-title>Crear Usuario Empresarial</mat-card-title>
+      </mat-card-header>
+      <mat-card-content>
+          <mat-form-field>
+            <input matInput placeholder="Correo" type="email" [(ngModel)]="correo" name="correo" required>
+          </mat-form-field>
+  
+          <mat-form-field>
+            <input matInput placeholder="Nombre" type="text" [(ngModel)]="nombre" name="nombre" required>
+          </mat-form-field>
+  
+          <mat-form-field>
+            <input matInput placeholder="Contraseña" type="password" [(ngModel)]="contrasena" name="contrasena" required>
+          </mat-form-field>
+  
+          <mat-form-field>
+            <input matInput placeholder="Teléfono" type="tel" [(ngModel)]="telefono" name="telefono" required>
+          </mat-form-field>
+  
+          <button mat-raised-button color="primary" (click)="crearUserE()">Enviar</button>
+      </mat-card-content>
+    </mat-card>
+  </div>
+
+  <div class="form-container" *ngIf="selectedOption == 'D'">
+    <mat-card>
+      <mat-card-header>
+        <mat-card-title>Crear Usuario Personal</mat-card-title>
+      </mat-card-header>
+      <mat-card-content>
+        <mat-form-field>
+            <input matInput placeholder="Nombre" type="text" [(ngModel)]="pnombre" name="Nombre" required>
+          </mat-form-field>
+          <mat-form-field>
+            <input matInput placeholder="Apellido" type="text" [(ngModel)]="apellido" name="Apellido" required>
+          </mat-form-field>
+  
+          <mat-form-field>
+            <input matInput placeholder="DPI" type="text" [(ngModel)]="dpi" name="dpi" required>
+          </mat-form-field>
+          
+          <mat-form-field>
+            <input matInput placeholder="Correo" type="tel" [(ngModel)]="pcorreo" name="correo" required>
+          </mat-form-field>
+
+          <mat-form-field>
+            <input matInput placeholder="Contraseña" type="password" [(ngModel)]="pass" name="contrasena" required>
+          </mat-form-field>
+  
+          <button mat-raised-button color="primary" (click)="crearUserP()">Enviar</button>
+      </mat-card-content>
+    </mat-card>
+  </div>
+</div>

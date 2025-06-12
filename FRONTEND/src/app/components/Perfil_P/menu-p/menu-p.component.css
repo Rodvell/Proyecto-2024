@@ -1,0 +1,67 @@
+.toolbar-logo {
+    width: 50px; /* Ajusta el tamaño de la imagen según tus necesidades */
+    height: auto; /* Ajusta la altura de la imagen según tus necesidades */
+}
+  
+.toolbar-title {
+    flex: 1; /* Hace que el título ocupe el espacio restante en el centro */
+    text-align: center; /* Centra el título horizontalmente */
+    font-size: 40px;
+    font-family: 'Times New Roman';
+}
+  
+.toolbar-spacer {
+  flex: 1; /* Crea un espacio flexible entre el título y los botones */
+}
+
+.custom-toolbar {
+    background-color: #34495E; /* Cambia este valor al color que desees */
+    color: #FFFFFF; /* Cambia este valor al color de texto deseado */
+    box-shadow: 3px 3px 5px 0px rgba(0,0,0,0.75);
+}
+
+.button-toolbar {
+    margin: 5px;
+}
+
+.example-container {
+    width: 500px;
+    height: 300px;
+    border: 1px solid rgba(0, 0, 0, 0.5);
+  }
+  
+  .example-sidenav-content {
+    display: flex;
+    height: 100%;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .example-sidenav {
+    padding: 20px;
+  }
+
+.body {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    height: 89.75vh;
+  }
+
+  .toolbar-spacer2 {
+    flex: 1.5; /* Crea un espacio flexible entre el título y los botones */
+  }
+
+.container {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #f0f0f0;
+    border: 1px solid #ddd;
+}
+
+.title {
+    font-size: 24px;
+    text-align: center;
+}

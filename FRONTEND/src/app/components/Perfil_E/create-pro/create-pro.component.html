@@ -1,0 +1,41 @@
+<div class="pagina-completa">
+    <mat-toolbar class="custom-toolbar">
+        <img src="../../../../assets/logo.png" class="toolbar-logo">
+        <span class="toolbar-spacer2"></span>
+        <span class="toolbar-title">EduJob+</span>
+        <span class="toolbar-spacer"></span>
+        <button mat-button routerLink="/menuE/{{enombre}}">
+            <mat-icon>home</mat-icon>
+            Ir a Menu
+        </button>
+        <button mat-button (click)="logout()">
+          <mat-icon>exit_to_app</mat-icon>
+                Cerrar Sesión
+        </button>
+    </mat-toolbar>
+</div>
+
+<div class="contenedor-formulario">
+    <div class="formulario">
+        <h2>Crear Propuesta</h2>
+        <mat-form-field>
+            <input matInput placeholder="Nombre" [(ngModel)]="enombre" disabled>
+          </mat-form-field>
+      
+          <mat-form-field>
+            <input matInput placeholder="Título" type="text" [(ngModel)]="titulo">
+          </mat-form-field>
+      
+          <mat-form-field>
+            <textarea matInput placeholder="Descripción" rows="4" type="text" [(ngModel)]="desc"></textarea>
+          </mat-form-field>
+      
+          <mat-form-field>
+            <textarea matInput placeholder="Requisitos" rows="4" type="text" [(ngModel)]="requi"></textarea>
+          </mat-form-field><br>
+          <button mat-raised-button color="primary" (click)="guardar()">Enviar</button>
+    </div>
+  </div>
+  
+  
+  

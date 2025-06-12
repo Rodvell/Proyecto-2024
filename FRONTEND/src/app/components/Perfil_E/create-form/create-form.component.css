@@ -1,0 +1,64 @@
+.toolbar-logo {
+    width: 50px; /* Ajusta el tamaño de la imagen según tus necesidades */
+    height: auto; /* Ajusta la altura de la imagen según tus necesidades */
+}
+  
+.toolbar-title {
+    flex: 1; /* Hace que el título ocupe el espacio restante en el centro */
+    text-align: center; /* Centra el título horizontalmente */
+    font-size: 40px;
+    font-family: 'Times New Roman';
+}
+  
+.toolbar-spacer {
+  flex: 1; /* Crea un espacio flexible entre el título y los botones */
+}
+
+.custom-toolbar {
+    background-color: #34495E; /* Cambia este valor al color que desees */
+    color: #FFFFFF; /* Cambia este valor al color de texto deseado */
+    box-shadow: 3px 3px 5px 0px rgba(0,0,0,0.75);
+}
+
+.button-toolbar {
+    margin: 5px;
+}
+
+.toolbar-spacer2 {
+  flex: 1.5; /* Crea un espacio flexible entre el título y los botones */
+}
+
+.contenedor {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 70vh;
+  }
+  
+mat-select {
+    margin-bottom: 16px; /* Espacio entre el select y el botón */
+    width: 50%;
+}
+
+.contenedor-formulario {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; /* Esto centra el contenido verticalmente en la página */
+  }
+  
+  .formulario {
+    width: 300px; /* Ancho del formulario */
+    padding: 20px;
+    border: 2px solid #000; /* Borde para resaltar el formulario */
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2); /* Sombra para resaltar el formulario */
+    background-color: #f5f5f5; /* Color de fondo del formulario */
+    text-align: center;
+  }
+  
+  button {
+    margin-top: 20px;
+  }
+  

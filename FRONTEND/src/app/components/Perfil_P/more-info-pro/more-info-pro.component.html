@@ -1,0 +1,37 @@
+<div class="pagina-completa">
+    <div class="pagina-completa">
+        <mat-toolbar class="custom-toolbar">
+            <button mat-button [matMenuTriggerFor]="menu">Menu</button>
+            <span class="toolbar-spacer2"></span>
+            <span class="toolbar-title">EduJob+</span>
+            <span class="toolbar-spacer"></span>
+            <button mat-button routerLink="/menuP/{{correo}}">
+                <mat-icon>home</mat-icon>
+                Ir a Menu
+            </button>
+            <button mat-button (click)="logout()">
+                <mat-icon>exit_to_app</mat-icon>
+                    Cerrar Sesión
+            </button>
+        </mat-toolbar>
+    </div>
+    
+    <mat-menu #menu="matMenu">
+        <button mat-menu-item routerLink="/listPA/{{correo}}">Propuestas Aplicadas</button>
+        <button mat-menu-item routerLink="/listMC/{{correo}}">Mis Cursos</button>
+    </mat-menu>
+<br><br><br><br><br><br>
+<div class="container">
+    <div class="left">
+      <h1>{{enombre}}</h1>
+      <h2>{{titulo}}</h2>
+      <p>Descripción del trabajo: {{desc}}</p>
+      <p>Requisitos: {{requisitos}}</p>
+    </div>
+    <div class="right">
+      <button class="button" routerLink="/menuA/{{correo}}/{{enombre}}/{{titulo}}">Aplicar</button>
+    </div>
+</div>
+<div class="footer">
+    <button class="submit-button" routerLink="/listPP/{{correo}}">Regresar</button>
+</div>
